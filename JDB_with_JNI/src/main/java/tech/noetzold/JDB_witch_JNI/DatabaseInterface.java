@@ -1,8 +1,8 @@
 package tech.noetzold.JDB_witch_JNI;
 
 public interface DatabaseInterface {
-    void createDocument(Document document);
-    Document getDocument(String id);
-    void updateDocument(String id, Document document);
-    void deleteDocument(String id);
+    void create(String id, String data);
+    String read(String id);
+    void update(String id, String data);
+    void delete(String id);
 }
