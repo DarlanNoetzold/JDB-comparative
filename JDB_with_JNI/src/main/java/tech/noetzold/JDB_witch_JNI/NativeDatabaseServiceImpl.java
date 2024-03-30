@@ -8,20 +8,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class NativeDatabaseServiceImpl implements DatabaseInterface {
 
-    @Override
-    public void createDocument(Document document) {
+    static {
+        System.loadLibrary("nomeDaSuaBiblioteca"); // Carrega a biblioteca nativa
     }
 
-    @Override
-    public Document getDocument(String id) {
-        return null;
-    }
-
-    @Override
-    public void updateDocument(String id, Document document) {
-    }
-
-    @Override
-    public void deleteDocument(String id) {
-    }
+    public native void create(String id, String data);
+    public native String read(String id);
+    public native void update(String id, String data);
+    public native void delete(String id);
 }
